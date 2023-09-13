@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <SlidingWindow :sequence-length="8" :window-size="7" :slide-by-n="slideVal" ref="sendWindow"/>
-    <button @click="$refs.sendWindow.slide(2)">slide</button>
+    <SlidingWindow :sequence-length="8" :window-size="7" :slide-by-n="slideVal" ref="sendWindow" />
+    <button @click="$refs.sendWindow.slideSf(1)">slide</button>
   </div>
 </template>
 
@@ -22,10 +22,18 @@ export default {
   props: {
     windowParams: Object
   },
+  components: { SlidingWindow },
   methods: {
 
   },
-  components: { SlidingWindow }
+  watch: {
+    windowParams: {
+      handler(newParams) {
+        console.log(newParams);
+      },
+      deep: true
+    }
+  }
 }
 </script>
 

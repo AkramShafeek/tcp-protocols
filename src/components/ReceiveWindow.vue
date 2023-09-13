@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <SlidingWindow :sequence-length="8" :window-size="1" :slide-by-n="slideVal" ref="receiveWindow"/>
-    <button @click="$refs.receiveWindow.slide(2)">slide2</button>
+    <button @click="$refs.receiveWindow.slideSf(1)">slide2</button>
   </div>
 </template>
 
